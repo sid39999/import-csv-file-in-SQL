@@ -1,0 +1,21 @@
+cd "C:\Program Files\MySQL\MySQL Server 8.0\bin"
+
+mysql -u username -p         -- replace username with your db username like root
+password
+
+set global local_infile=1;
+
+exit;
+
+mysql --local-infile=1 -u username -p   -- replace username with your db username like root
+
+
+show databases
+
+
+LOAD DATA LOCAL INFILE 'file_path.csv'  -- give file path
+     INTO TABLE table_name         -- give database.table_name 
+     FIELDS TERMINATED BY ','
+     ENCLOSED BY '"'
+     LINES TERMINATED BY '\n'
+     IGNORE 1 ROWS; -- If your CSV file has a header row
